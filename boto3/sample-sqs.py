@@ -1,4 +1,3 @@
-from inspect import Attribute
 import boto3
 
 sqs = boto3.resource('sqs')
