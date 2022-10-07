@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    db80807c-1a2a-44cc-a92b-7a47adf16089:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 495
+        'y': 114
+      z: 0
+Resources:
+  SQSQ4X5NS:
+    Type: 'AWS::SQS::Queue'
+    Properties:
+      QueueName: test
+      DelaySeconds: 5
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: db80807c-1a2a-44cc-a92b-7a47adf16089
