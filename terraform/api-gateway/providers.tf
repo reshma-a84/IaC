@@ -17,8 +17,8 @@ terraform {
 }
 
 provider "aws" {
-  region  = "ap-south-1"
-  profile = "aws-terraform"
+  region  = var.region
+  profile = var.profile
 
   default_tags {
     tags = {
@@ -26,23 +26,4 @@ provider "aws" {
       Service     = "LearningService"
     }
   }
-}
-
-
-resource "random_string" "hands_on_random_string" {
-  special = false
-  upper   = false
-  length  = 4
-}
-
-locals {
-  prefix = "sample-${random_string.hands_on_random_string.result}"
-}
-
-resource "aws_s3_bucket" "hands_on_S3_Bucket" {
-  bucket = "${local.prefix}-hands-on-bucket"
-}
-
-output "s3_bucket_name" {
-  value = aws_s3_bucket.hands_on_S3_Bucket.id
 }
