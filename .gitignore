@@ -1,3 +1,5 @@
+#This file is a part of stanard github repo for .gitignore files. The contents below are specific to Terraform
+
 # Local .terraform directories
 **/.terraform/*
 
