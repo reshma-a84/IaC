@@ -4,9 +4,10 @@
 
 
 resource "aws_vpc" "hands_on_VPC" {
-  cidr_block           = "100.0.0.0/16"
+  cidr_block           = "10.0.0.0/16"
   enable_dns_support   = true
   enable_dns_hostnames = true
+
   tags = {
     Name = "ANW-VPC"
   }
@@ -19,7 +20,7 @@ resource "aws_vpc" "hands_on_VPC" {
 resource "aws_subnet" "public_subnet_1" {
   vpc_id                  = data.aws_vpc.get_vpc_id.id
   availability_zone       = "us-east-1a"
-  cidr_block              = "100.0.0.0/20"
+  cidr_block              = "10.0.0.0/20"
   map_public_ip_on_launch = true
 
   tags = {
@@ -32,7 +33,7 @@ resource "aws_subnet" "public_subnet_1" {
 resource "aws_subnet" "public_subnet_2" {
   vpc_id                  = data.aws_vpc.get_vpc_id.id
   availability_zone       = "us-east-1b"
-  cidr_block              = "100.0.16.0/20"
+  cidr_block              = "10.0.16.0/20"
   map_public_ip_on_launch = true
   tags = {
     Name = "ANW-VPC-Public-Subnet-2"
@@ -44,7 +45,7 @@ resource "aws_subnet" "public_subnet_2" {
 resource "aws_subnet" "private_subnet_1" {
   vpc_id                  = data.aws_vpc.get_vpc_id.id
   availability_zone       = "us-east-1c"
-  cidr_block              = "100.0.32.0/20"
+  cidr_block              = "10.0.32.0/20"
   map_public_ip_on_launch = false
   tags = {
     Name = "ANW-VPC-Private-Subnet-1"
@@ -54,7 +55,7 @@ resource "aws_subnet" "private_subnet_1" {
 }
 
 # ********************************************************
-#                   Internet Gateway
+# Internet Gateway
 # ********************************************************
 
 resource "aws_internet_gateway" "igw" {

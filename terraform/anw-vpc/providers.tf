@@ -8,8 +8,8 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "30as7ln-s3-tfstate-bucket"
-    key    = "hands-on/ec2-full"
+    bucket = "lj5m0ov-s3-tfstate-bucket"
+    key    = "hands-on/anw-vpc-full"
     region = "us-east-1"
 
   }
@@ -23,7 +23,9 @@ provider "aws" {
   default_tags {
     tags = {
       Environment = "Learn"
-      Service     = "LearningService"
+      Service     = "AWS-Advanced Network Certification"
     }
   }
 }
+
+provider "local" {}

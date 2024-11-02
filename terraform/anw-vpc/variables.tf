@@ -7,5 +7,3 @@ variable "profile" {
   type    = string
   default = "default"
 }
-
-# variable "vpc_id" {}
